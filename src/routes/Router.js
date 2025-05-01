@@ -35,6 +35,14 @@ export const Router = () => {
               Articulo
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/persona"
+              className={({ isActive }) => (isActive ? "active" : "inactive")}
+            >
+              Persona
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <section className="container">
@@ -44,6 +52,8 @@ export const Router = () => {
           <Route path="/contacto" element={<Contact />} />
           <Route path="/articulo" element={<Articles />} />
           <Route path="/persona/:nombre/:apellido" element={<Person />} />
+          <Route path="/persona/:nombre" element={<Person />} />
+          <Route path="/persona" element={<Person />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </section>
